@@ -11,8 +11,10 @@
 }
 
 :root {
-  --color-bg:#225d0b;
-  --color-bg-variant: #0a480e;
+  --color-bg-variant:linear-gradient(45deg,#15930c 10%, #175a34);
+  --color-bg-variant-hover:linear-gradient(45deg,#304905, #07764b);
+  --color-btn:linear-gradient(45deg,#4ef429, #5ade88);
+  --color-btn-hover:linear-gradient(rgb(21, 252, 156),rgb(198, 229, 19));
   --color-primary: #52f81a;
   --color-primary-variant: rgb(178, 234, 25);
   --color-white: #fff;
@@ -82,9 +84,6 @@ a {
   color: var(--color-primary)
 }
 
-a:hover {
-  color: var(--color-white);
-}
 
 .btn {
   width: max-content;
@@ -98,14 +97,14 @@ a:hover {
 }
 
 .btn:hover {
-  background-color: var(--color-white);
-  color: var(--color-bg);
-  border-color: transparent;
+  background:var(--color-btn-hover);
+  color: var(--color-white);
 }
 
+
 .btn-primary {
-  background-color: var(--color-primary);
-  color: var(--color-bg);
+  background: var(--color-btn);
+  color: var(--color-white);
 }
 
 img {

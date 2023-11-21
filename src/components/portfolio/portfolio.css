@@ -1,7 +1,18 @@
-.portfolio__container {
+.portfolio__container{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.togglebuttons{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.project__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
+    padding: 0 2rem 0 2rem;
 }
 
 .portfolio__item {
@@ -10,11 +21,12 @@
     border-radius: 2rem;
     border: 1px solid transparent;
     transition: var(--transition);
+    height: fit-content;
 }
 
 .portfolio__item:hover {
+    background: var(--color-bg-variant-hover);
     border-color: var(--color-primary-variant);
-    background: transparent;
 }
 
 .portfolio__item-image {
