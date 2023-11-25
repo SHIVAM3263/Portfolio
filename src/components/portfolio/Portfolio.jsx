@@ -1,67 +1,67 @@
 import React,{useState} from 'react';
 import './portfolio.css';
+import img1 from '../../assets/Weather-screenshot.jpg';
+import img2 from '../../assets/Todo-Screenshot.jpg';
+import img3 from '../../assets/Unsplash-Screenshot.jpg';
+import img4 from '../../assets/bank-Screenshot.jpg';
+import img5 from '../../assets/Emosic-Screenshot.jpg';
 
 
 const Portfolio = () => {
   const soloProjects = [
     {
       id: 1,
-      title: 'Adventist Learning Center',
-      img:'../../assets/bg.jpg',
+      title: 'Weather App',
+      category: 'Web Development',
+      img:img1,
       description:
-        'Adventist Learning Center provides quality education to Syrian and Kurdish Refugees living in Beirut, Lebanon. This simple website was built to reach a bigger audience and ease the process of gathering donations for the ALC students.',
-      technologies: 'Ruby on Rails | SCSS',
-      link: 'https://adventistlearningcenter-257375ab1970.herokuapp.com/',
-      github: 'https://github.com/Meri-MG/school',
+        'a simple weather app that allows users to check the weather for a specific location as user type and toggle between Celsius and Fahrenheit temperature units.',
+      technologies: 'React',
+      link: 'https://weather-app-delta-vert.vercel.app/',
+      github: 'https://github.com/SHIVAM3263/WeatherApp',
     },
     {
       id: 2,
-      title: 'FakeStore',
+      title: 'Todo App',
       category: 'Web Development',
+      img:img2,
       description:
-        'FakeStore app that provides information about available products and their details',
-      technologies: 'React | Redux',
-      link: 'https://fakestore-metrics.netlify.app/',
-      github: 'https://github.com/Meri-MG/Fakestore---react',
+        'A simple keeper app that allows users to keep record of your tasks by creating todos, updating them and deleting them.',
+      technologies: 'React',
+      link: 'https://github.com/SHIVAM3263/To-Do-App',
+      github: 'https://github.com/SHIVAM3263/To-Do-App',
     },
     {
       id: 3,
-      title: 'To-Do App',
+      title: 'Image search App',
       category: 'Web Development',
-      description: 'User friendly app to plan your day and manage tasks',
-      technologies: 'JavaScript | Webpack',
-      link: 'https://meri-mg.github.io/To-Do-List/dist/',
-      github: 'https://github.com/Meri-MG/To-Do-List',
+      img:img3,
+      description: 'An image search web app in which users gets images displayed according to the typed text if found',
+      technologies: 'React',
+      link: 'https://unsplash-clone-psi.vercel.app/',
+      github: 'https://github.com/SHIVAM3263/Tars-coding-challange',
     },
     {
       id: 4,
-      title: 'Shelter',
+      title: 'Bank Management System',
+      img:img4,
       category: 'others',
       description:
-        'Fully responsive interactive website built based on Figma design',
-      technologies: 'JavaScript | CSS',
-      link: 'https://meri-mg.github.io/shelter/pages/main/index.html',
-      github: 'https://github.com/Meri-MG/shelter',
+        'Implemented a console-based Bank Management System in C++ which allows users to create accounts, update information, perform transactions, and view account details.',
+      technologies: 'C++',
+      link: 'https://github.com/SHIVAM3263/Bank-Management-system',
+      github: 'https://github.com/SHIVAM3263/Bank-Management-system',
     },
     {
       id: 5,
-      title: 'World News',
+      title: 'Emosic',
+      img:img5,
       category: 'others',
       description:
-        'Fully responsive interactive website built based on Adobe XD design',
-      technologies: 'JavaScript | CSS',
-      link: 'https://meri-mg.github.io/Unilab-world-news/',
-      github: 'https://github.com/Meri-MG/Unilab-world-news',
-    },
-    {
-      id: 6,
-      title: 'Math Resource',
-      category: 'others',
-      description:
-        'Real-world group project which is still in progress and will provide educational platform for future young developers',
-      technologies: 'JavaScript | Scss | Python',
-      link: 'https://lukinoo.github.io/math-resource/',
-      github: 'https://github.com/lukinoo/math-resource',
+        'A website in which users can get songs recommended on the basis of their facial emotion built using python,flask andHTML,CSS and JavaScript.',
+      technologies: 'Python|Flask|Machine Learning|HTML|CSS|Javascript',
+      link: 'https://github.com/SHIVAM3263/Emosic',
+      github: 'https://github.com/SHIVAM3263/Emosic',
     },
   ];
   const [activeCategory, setActiveCategory] = useState('All'); 

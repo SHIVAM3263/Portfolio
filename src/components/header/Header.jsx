@@ -1,8 +1,9 @@
 import React from 'react';
 import { Typewriter } from 'react-simple-typewriter'
-import CTA from './CTA';
-import HeaderSocials from './HeaderSocials';
 import profilePic from '../../assets/profile.jpg';
+import CV from '../../assets/resume.pdf';
+import { BsLinkedin } from 'react-icons/bs';
+import { FaGithub } from 'react-icons/fa';
 import './header.css';
 
 const Header = () => {
@@ -22,8 +23,18 @@ const Header = () => {
             delaySpeed={1000}
           />
         </h5>
-        <CTA />
-        <HeaderSocials />
+      <div className="cta">
+      <a href={CV} download className="btn">
+        Download CV
+      </a>
+      <a href="#contact" className="btn btn-primary">
+        Let's talk
+      </a>
+      </div>
+      <div className="header__socials">
+      <a href="https://www.linkedin.com/in/shivam-rawat-103403216" target="_blank" rel="noreferrer" ><BsLinkedin /></a>
+      <a href="https://github.com/SHIVAM3263" target="_blank" rel="noreferrer" ><FaGithub /></a>
+      </div>  
       </div>
       <div className="right__container">
         <img src={profilePic} alt="profile" />

@@ -22,7 +22,7 @@
 }
 
 .contact__option:hover {
-    background: transparent;
+    background: var(--color-bg-variant-hover);
     border-color: var(--color-primary-variant);
 }
 

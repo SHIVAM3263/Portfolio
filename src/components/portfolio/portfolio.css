@@ -8,6 +8,9 @@
     justify-content: center;
     gap: 1rem;
 }
+.togglebuttons>.active{
+background:var(--color-btn-hover);
+}
 .project__container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -32,7 +35,7 @@
 .portfolio__item-image {
     border-radius: 1.5rem;
     overflow: hidden;
-    height: 30%;
+    height: fit-content;
 }
 
 .portfolio__item h3 {
@@ -55,14 +58,14 @@
 }
 
 @media screen and (max-width: 1024px){
-    .portfolio__container {
+    .project__container {
         grid-template-columns: 1fr 1fr;
         gap: 1.2rem;
     }
 }
   
 @media screen and (max-width: 600px){
-    .portfolio__container {
+    .project__container {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
