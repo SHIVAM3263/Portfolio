@@ -1,7 +1,7 @@
 # Personal-Portfolio
 > This is personal portfolio website.
 
-![Portfolio](https://raw.github.com/Meri-MG/portfolio---react/master/src/assets/port.png)
+![Portfolio](https://raw.github.com/SHIVAM3263/Portfolio/main/src/assets/Portfolio-screenshot.jpg)
 
 ## Built With
 
@@ -11,7 +11,7 @@
 
 ## Live Demo
 
-- [Live Demo](https://meri-mg-portfolio.netlify.app/)
+- [Live Demo](https://portfolio-fp1xuk1bk-shivam-rawats-projects.vercel.app/)
 
 
 # Getting Started
@@ -28,12 +28,9 @@
 
 - Choose a folder in your local machine where you want this repository to be copied
 
-- Clone this [repository](https://github.com/Meri-MG/portfolio---react) to your local machine 
-- ```
-  git clone git@github.com:Meri-MG/portfolio---react.git
-  ```
+- Clone this repository to your local machine 
 
-- Navigate to `cd portfolio---react`  directory.
+- Navigate to portfolio directory.
 
 - To install all the app dependencies on the command line run
 - ```
@@ -46,15 +43,11 @@
 
 
 ## Author
+Shivam Rawat
 
-:woman: **Meri Gogichashvili**
-
-- [GitHub](https://github.com/Meri-MG)
-- [LinkedIn](https://www.linkedin.com/in/meri-gogichashvili/)
 
 ## 🤝 Contributing
 - Contributions, issues, and feature requests are welcome!
-- Feel free to check the [issues page](https://github.com/Meri-MG/portfolio---react/issues).
 
 # Show your support
 Give a ⭐ if you like this project!
