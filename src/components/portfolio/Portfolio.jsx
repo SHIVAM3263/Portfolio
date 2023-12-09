@@ -5,6 +5,7 @@ import img2 from '../../assets/Todo-Screenshot.jpg';
 import img3 from '../../assets/Unsplash-Screenshot.jpg';
 import img4 from '../../assets/bank-Screenshot.jpg';
 import img5 from '../../assets/Emosic-Screenshot.jpg';
+import img6 from '../../assets/Netflix-screenshot.jpg';
 
 
 const Portfolio = () => {
@@ -64,9 +65,9 @@ const Portfolio = () => {
       github: 'https://github.com/SHIVAM3263/Emosic',
     },
     {
-      id: 5,
+      id: 6,
       title: 'Netflix-clone',
-      img:img5,
+      img:img6,
       category: 'Web Development',
       description:
         'A website similiar to movie streaming like netlflix or disney+ in which users can view movie or tv shows of any genre.',
