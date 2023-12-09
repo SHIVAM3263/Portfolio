@@ -28,7 +28,7 @@ const Portfolio = () => {
       description:
         'A simple keeper app that allows users to keep record of your tasks by creating todos, updating them and deleting them.',
       technologies: 'React',
-      link: 'https://github.com/SHIVAM3263/To-Do-App',
+      link: 'https://to-do-brown-beta.vercel.app/',
       github: 'https://github.com/SHIVAM3263/To-Do-App',
     },
     {
