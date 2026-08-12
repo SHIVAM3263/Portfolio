@@ -6,6 +6,7 @@ import Header from './components/header/Header';
 import Intro from './components/intro/Intro';
 import Topbar from './components/topbar/Topbar';
 import Portfolio from './components/portfolio/Portfolio'
+import Work from './components/work/Work';
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
       <Header />
       <Topbar />
       <Intro />
+      <Work />
       <Experience />
       <Portfolio />
       <Contact />

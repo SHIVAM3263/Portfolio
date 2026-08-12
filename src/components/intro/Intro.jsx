@@ -12,7 +12,7 @@ const Intro = () => {
       <div className="container about__container">
         <div className="about__me">
           <div className="about__me-image">
-            <img src={profilePic} alt="Profile-picture" />
+            <img src={profilePic} alt="Shivam Rawat" />
           </div>
         </div>
         <div className="about__content">
@@ -20,18 +20,20 @@ const Intro = () => {
             <article className="about__card">
               <FaAward className="about__icon" />
               <h5>Experience</h5>
-              <small>Fresher</small>
+              <small>2+ Years at IIT Bombay</small>
             </article>
             <article className="about__card">
               <VscFolderLibrary className="about__icon" />
               <h5>Projects</h5>
-              <small>6+ Completed Projects</small>
+              <small>Full Stack &amp; ML Projects</small>
             </article>
           </div>
-          <p>Recent Computer Science graduate with a good knowledge of Software Development Lifecycle concepts and strong foundation in web
-            development technologies, including HTML, CSS, and JavaScript. Proficient in backend development using Flask and experienced with
-            React. Eager to launch a career with a focus on designing, building, and supporting applications in
-            alignment with business requirements.</p>
+          <p>Software engineer building and maintaining a production academic assessment platform at IIT Bombay,
+            contributing across backend, web, Android and iOS modules. I've worked on authentication flows, attendance
+            integrity mechanisms, asynchronous processing with Celery, and an ML-powered grading pipeline running in live
+            examination environments.</p>
+          <p>I'm comfortable debugging large codebases and implementing scalable, reliable logic across systems &mdash;
+            from Django and Celery on the backend to Vue, React and native mobile clients on the front.</p>
           <a href="#contact" className="btn btn-primary">Let's Talk</a>
         </div>
       </div>

@@ -3,64 +3,65 @@ import { BsFillPatchCheckFill } from 'react-icons/bs';
 import './experience.css';
 
 const Experience = () => {
+  const skillGroups = [
+    {
+      id: 1,
+      title: 'Languages',
+      skills: ['Python', 'C++', 'JavaScript'],
+    },
+    {
+      id: 2,
+      title: 'Backend',
+      skills: ['Django', 'Flask', 'REST APIs', 'SQL', 'Celery', 'Async Tasks'],
+    },
+    {
+      id: 3,
+      title: 'ML / CV',
+      skills: ['PyTorch', 'Hugging Face', 'TrOCR', 'OpenCV', 'OCR'],
+    },
+    {
+      id: 4,
+      title: 'Frontend',
+      skills: ['React', 'Vue.js', 'Next.js', 'HTML', 'CSS'],
+    },
+    {
+      id: 5,
+      title: 'Mobile',
+      skills: ['Android (Java)', 'iOS (Swift)'],
+    },
+    {
+      id: 6,
+      title: 'Tools & Platforms',
+      skills: ['Git', 'Docker', 'Linux', 'Selenium', 'Android Studio', 'Xcode'],
+    },
+    {
+      id: 7,
+      title: 'Core CS',
+      skills: ['Data Structures', 'Operating Systems', 'System Design', 'DBMS'],
+    },
+  ];
+
   return (
-    <section id="experience">
+    <section id="skills">
       <h5>The Skills I Have</h5>
       <h2>Skills</h2>
       <div className="container experience__container">
-        <div className="experience__frontend">
-          <h3>Frontend Development</h3>
-          <div className="experience__content">
-          <article className="experience__details">
-              <BsFillPatchCheckFill className="experience__details-icon" />
-              <h4>HTML</h4>
-            </article>
-            <article className="experience__details">
-              <BsFillPatchCheckFill className="experience__details-icon" />
-              <h4>CSS</h4>
-            </article>
-            <article className="experience__details">
-              <BsFillPatchCheckFill className="experience__details-icon" />
-              <h4>JavaScript</h4>
-            </article>
-            <article className="experience__details">
-              <BsFillPatchCheckFill className="experience__details-icon" />
-              <h4>React</h4>
-            </article>
+        {skillGroups.map((group) => (
+          <div key={group.id}>
+            <h3>{group.title}</h3>
+            <div className="experience__content">
+              {group.skills.map((skill) => (
+                <article className="experience__details" key={skill}>
+                  <BsFillPatchCheckFill className="experience__details-icon" />
+                  <h4>{skill}</h4>
+                </article>
+              ))}
+            </div>
           </div>
-        </div>
-        <div className="experience__others">
-          <h3>Others</h3>
-          <div className="experience__content">
-          <article className="experience__details">
-              <BsFillPatchCheckFill className="experience__details-icon" />
-              <h4>C++</h4>
-            </article>
-            <article className="experience__details">
-              <BsFillPatchCheckFill className="experience__details-icon" />
-              <h4>Python</h4>
-            </article>
-            <article className="experience__details">
-              <BsFillPatchCheckFill className="experience__details-icon" />
-              <h4>Flask</h4>
-            </article>
-            <article className="experience__details">
-              <BsFillPatchCheckFill className="experience__details-icon" />
-              <h4>Sqlalchemy</h4>
-            </article>
-            <article className="experience__details">
-              <BsFillPatchCheckFill className="experience__details-icon" />
-              <h4>PHP</h4>
-            </article>
-            <article className="experience__details">
-              <BsFillPatchCheckFill className="experience__details-icon" />
-              <h4>Git/GitHub</h4>
-            </article>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Experience
+export default Experience;

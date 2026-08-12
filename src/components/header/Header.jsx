@@ -14,7 +14,7 @@ const Header = () => {
         <h1>Shivam Rawat</h1>
         <h5 className="text-light">
         <Typewriter
-            words={['Web developer', 'Coder', 'Engineer']}
+            words={['Software Engineer', 'Backend Developer', 'Full Stack Developer']}
             loop={0}
             cursor
             cursorStyle='_'

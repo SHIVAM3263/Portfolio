@@ -1,82 +1,70 @@
-import React,{useState} from 'react';
+import React, { useState } from 'react';
 import './portfolio.css';
-import img1 from '../../assets/Weather-screenshot.jpg';
-import img2 from '../../assets/Todo-Screenshot.jpg';
-import img3 from '../../assets/Unsplash-Screenshot.jpg';
-import img4 from '../../assets/bank-Screenshot.jpg';
-import img5 from '../../assets/Emosic-Screenshot.jpg';
-import img6 from '../../assets/Netflix-screenshot.jpg';
-
+import emosicImg from '../../assets/Emosic-Screenshot.jpg';
+import netflixImg from '../../assets/Netflix-screenshot.jpg';
 
 const Portfolio = () => {
   const soloProjects = [
     {
       id: 1,
-      title: 'Weather App',
-      category: 'Web Development',
-      img:img1,
+      title: 'Code Clasher',
+      category: 'Full Stack',
+      img: null,
       description:
-        'a simple weather app that allows users to check the weather for a specific location as user type and toggle between Celsius and Fahrenheit temperature units.',
-      technologies: 'React',
-      link: 'https://weather-app-delta-vert.vercel.app/',
-      github: 'https://github.com/SHIVAM3263/WeatherApp',
+        'A real-time 1v1 competitive coding battle arena where two players race on the same problem with a live health/damage system. Built on Django Channels over WebSockets (Redis channel layer) to sync match state, health and results across clients, with JWT auth, Elo-based ranked matchmaking across skill tiers, and a sandboxed Python execution engine that runs submissions against test cases under per-problem time limits.',
+      technologies: 'Django | Django Channels | Daphne/ASGI | Redis | React | Vite',
+      link: 'https://code-clasher.vercel.app/',
+      github: 'https://github.com/SHIVAM3263/Code-Clasher',
     },
     {
       id: 2,
-      title: 'Todo App',
-      category: 'Web Development',
-      img:img2,
+      title: 'MockMate',
+      category: 'AI / ML',
+      img: null,
       description:
-        'A simple keeper app that allows users to keep record of your tasks by creating todos, updating them and deleting them.',
-      technologies: 'React',
-      link: 'https://to-do-brown-beta.vercel.app/',
-      github: 'https://github.com/SHIVAM3263/To-Do-App',
+        'An AI voice interviewer that analyzes a resume, holds a real-time spoken interview and returns a scored feedback report. A Gemini-driven interviewer speaks each question (Deepgram Aura TTS) while the candidate answers by voice, with automatic turn-taking from in-browser silence detection. The interviewer is modeled as a stateful Gemini conversation over the full transcript, using structured outputs (validated Pydantic schemas) for resume parsing, question generation and the final report.',
+      technologies: 'Next.js | Django REST | Gemini | Deepgram | PostgreSQL | Docker',
+      link: 'https://mock-mate-ecru.vercel.app/',
+      github: 'https://github.com/SHIVAM3263/MockMate',
     },
     {
       id: 3,
-      title: 'Image search App',
-      category: 'Web Development',
-      img:img3,
-      description: 'An image search web app in which users gets images displayed according to the typed text if found',
-      technologies: 'React',
-      link: 'https://unsplash-clone-psi.vercel.app/',
-      github: 'https://github.com/SHIVAM3263/Tars-coding-challange',
+      title: 'Answersheet Grader',
+      category: 'AI / ML',
+      img: null,
+      description:
+        'An automated answer-sheet grading pipeline that extracts handwritten roll numbers from scanned exam PDFs using TrOCR with OpenCV preprocessing (deskew, contrast enhancement, upscaling), auto-crops per-question answer images, and exports a graded-submissions CSV — replacing the manual sorting workflow instructors used to run by hand.',
+      technologies: 'Python | PyTorch | Hugging Face TrOCR | OpenCV | Celery',
+      link: 'https://github.com/SHIVAM3263/Answersheet-Grader',
+      github: 'https://github.com/SHIVAM3263/Answersheet-Grader',
     },
     {
       id: 4,
-      title: 'Bank Management System',
-      img:img4,
-      category: 'others',
-      description:
-        'Implemented a console-based Bank Management System in C++ which allows users to create accounts, update information, perform transactions, and view account details.',
-      technologies: 'C++',
-      link: 'https://github.com/SHIVAM3263/Bank-Management-system',
-      github: 'https://github.com/SHIVAM3263/Bank-Management-system',
-    },
-    {
-      id: 5,
       title: 'Emosic',
-      img:img5,
-      category: 'others',
+      category: 'AI / ML',
+      img: emosicImg,
       description:
-        'A website in which users can get songs recommended on the basis of their facial emotion built using python,flask andHTML,CSS and JavaScript.',
-      technologies: 'Python|Flask|Machine Learning|HTML|CSS|Javascript',
+        'A website that recommends songs based on the listener\'s facial emotion, using a trained emotion-classification model behind a Flask backend.',
+      technologies: 'Python | Flask | Machine Learning | HTML | CSS | JavaScript',
       link: 'https://github.com/SHIVAM3263/Emosic',
       github: 'https://github.com/SHIVAM3263/Emosic',
     },
     {
-      id: 6,
-      title: 'Netflix-clone',
-      img:img6,
-      category: 'Web Development',
+      id: 5,
+      title: 'Netflix Clone',
+      category: 'Frontend',
+      img: netflixImg,
       description:
-        'A website similiar to movie streaming like netlflix or disney+ in which users can view movie or tv shows of any genre.',
+        'A movie streaming interface in the style of Netflix or Disney+, where users can browse and view movies and TV shows across any genre.',
       technologies: 'React | Redux',
       link: 'https://netflix-clone-zeta-brown-92.vercel.app/',
       github: 'https://github.com/SHIVAM3263/Netflix-clone',
-    }
+    },
   ];
-  const [activeCategory, setActiveCategory] = useState('All'); 
+
+  const categories = ['All', 'Full Stack', 'AI / ML', 'Frontend'];
+
+  const [activeCategory, setActiveCategory] = useState('All');
 
   const filteredProjects =
     activeCategory === 'All'
@@ -86,6 +74,7 @@ const Portfolio = () => {
   const handleCategoryClick = (category) => {
     setActiveCategory(category);
   };
+
   return (
     <section id="portfolio">
       <h5>My Recent Work</h5>
@@ -93,56 +82,63 @@ const Portfolio = () => {
 
       <div className="portfolio__container">
         <div className="togglebuttons">
-        <button
-            className={`btn btn-primary ${activeCategory === 'All' ? 'active' : ''}`}
-            onClick={() => handleCategoryClick('All')}
-          >
-            All
-          </button>
-          <button
-            className={`btn btn-primary ${activeCategory === 'Web Development' ? 'active' : ''}`}
-            onClick={() => handleCategoryClick('Web Development')}
-          >
-            Web Development
-          </button>
-          <button
-            className={`btn btn-primary ${activeCategory === 'Cyber Security' ? 'active' : ''}`}
-            onClick={() => handleCategoryClick('others')}
-          >
-           Others
-          </button>
+          {categories.map((category) => (
+            <button
+              key={category}
+              className={`btn btn-primary ${
+                activeCategory === category ? 'active' : ''
+              }`}
+              onClick={() => handleCategoryClick(category)}
+            >
+              {category}
+            </button>
+          ))}
         </div>
-        <div className='project__container'>
-        {filteredProjects.map((pro) => (
-          <article className="portfolio__item" key={pro.id}>
-            <div className="portfolio__item-image">
-              <img src={pro.img} alt={pro.title} />
-            </div>
-            <div className="portfolio__item-content">
-              <h3>{pro.title}</h3>
-              <p>{pro.description}</p>
-              <p>{pro.technologies}</p>
-            </div>
-            <div className="portfolio__item-cta">
-              <a
-                href={pro.github}
-                target="_blank"
-                className="btn"
-                rel="noreferrer"
-              >
-                GitHub
-              </a>
-              <a
-                href={pro.link}
-                target="_blank"
-                className="btn btn-primary"
-                rel="noreferrer"
-              >
-                Visit Website
-              </a>
-            </div>
-          </article>
-        ))}
+        <div className="project__container">
+          {filteredProjects.map((pro) => (
+            <article className="portfolio__item" key={pro.id}>
+              <div className="portfolio__item-image">
+                {pro.img ? (
+                  <img src={pro.img} alt={pro.title} />
+                ) : (
+                  <div className="portfolio__item-placeholder">
+                    <span className="portfolio__item-initials">
+                      {pro.title
+                        .split(' ')
+                        .map((word) => word[0])
+                        .join('')}
+                    </span>
+                    <span className="portfolio__item-tag">{pro.category}</span>
+                  </div>
+                )}
+              </div>
+              <div className="portfolio__item-content">
+                <h3>{pro.title}</h3>
+                <p>{pro.description}</p>
+                <p className="portfolio__item-tech">{pro.technologies}</p>
+              </div>
+              <div className="portfolio__item-cta">
+                <a
+                  href={pro.github}
+                  target="_blank"
+                  className="btn"
+                  rel="noreferrer"
+                >
+                  GitHub
+                </a>
+                {pro.link !== pro.github && (
+                  <a
+                    href={pro.link}
+                    target="_blank"
+                    className="btn btn-primary"
+                    rel="noreferrer"
+                  >
+                    Visit Website
+                  </a>
+                )}
+              </div>
+            </article>
+          ))}
         </div>
       </div>
     </section>
