@@ -11,18 +11,30 @@
 }
 
 :root {
-  --color-bg-variant:linear-gradient(45deg,#15930c 10%, #175a34);
-  --color-bg-variant-hover:linear-gradient(45deg,#304905, #07764b);
-  --color-btn:linear-gradient(45deg,#4ef429, #5ade88);
-  --color-btn-hover:linear-gradient(rgb(21, 252, 156),rgb(198, 229, 19));
-  --color-primary: #52f81a;
-  --color-primary-variant: rgb(178, 234, 25);
-  --color-white: #fff;
-  --color-light: rgba(255, 255, 255, 0.656);
+  /* Surfaces */
+  --color-bg: #0b0f14;
+  --color-bg-2: #11161d;
+  --color-bg-variant: rgba(255, 255, 255, 0.045);
+  --color-bg-variant-hover: rgba(74, 222, 128, 0.10);
 
-  --transition: all 400ms ease;
+  /* Accent (refined emerald / lime instead of harsh neon) */
+  --color-primary: #4ade80;
+  --color-primary-variant: #a3e635;
+  --color-btn: linear-gradient(135deg, #4ade80, #22c55e);
+  --color-btn-hover: linear-gradient(135deg, #34d399, #16a34a);
 
-  --container-width-lg: 75%;
+  /* Text */
+  --color-white: #eef2ee;
+  --color-light: rgba(238, 242, 238, 0.66);
+
+  /* Lines & depth */
+  --color-border: rgba(255, 255, 255, 0.08);
+  --shadow: 0 24px 50px -24px rgba(0, 0, 0, 0.7);
+  --shadow-accent: 0 18px 40px -18px rgba(74, 222, 128, 0.45);
+
+  --transition: all 300ms ease;
+
+  --container-width-lg: 72%;
   --container-width-md: 86%;
   --container-width-sm: 100%;
 }
@@ -31,14 +43,18 @@ html {
   scroll-behavior: smooth;
 }
 
-
-
 body {
-  background-image: url(../src/assets/bg.jpg);
   font-family: 'Poppins', sans-serif;
   color: var(--color-white);
   line-height: 1.7;
-  background-size: cover;
+  background-color: var(--color-bg);
+  background-image:
+    radial-gradient(900px circle at 12% -10%, rgba(74, 222, 128, 0.14), transparent 55%),
+    radial-gradient(760px circle at 92% 8%, rgba(163, 230, 53, 0.10), transparent 52%),
+    radial-gradient(1000px circle at 50% 120%, rgba(34, 197, 94, 0.10), transparent 60%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  -webkit-font-smoothing: antialiased;
 }
 
 .container {
@@ -53,10 +69,11 @@ h4,
 h5,
 h6 {
   font-weight: 500;
+  line-height: 1.2;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
 }
 
 section {
@@ -65,13 +82,24 @@ section {
 
 section > h2,
 section > h5 {
-  color: var(--color-light);
   text-align: center;
 }
 
+section > h5 {
+  color: var(--color-light);
+  text-transform: uppercase;
+  letter-spacing: 0.18rem;
+  font-size: 0.82rem;
+  font-weight: 400;
+}
+
 section > h2 {
-  color: var(--color-primary);
   margin-bottom: 3rem;
+  font-size: 2.2rem;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-variant));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .text-light {
@@ -81,30 +109,43 @@ section > h2 {
 
 a {
   transition: var(--transition);
-  color: var(--color-primary)
+  color: var(--color-primary);
 }
 
+a:hover {
+  color: var(--color-primary-variant);
+}
 
 .btn {
   width: max-content;
   display: inline-block;
   color: var(--color-primary);
-  padding: 0.75rem 1.2rem;
-  border-radius: 0.4rem;
+  padding: 0.75rem 1.3rem;
+  border-radius: 0.6rem;
   cursor: pointer;
   border: 1px solid var(--color-primary);
+  background: transparent;
+  font-size: 0.95rem;
   transition: var(--transition);
 }
 
 .btn:hover {
-  background:var(--color-btn-hover);
+  background: rgba(74, 222, 128, 0.12);
   color: var(--color-white);
+  transform: translateY(-2px);
 }
-
 
 .btn-primary {
   background: var(--color-btn);
-  color: var(--color-white);
+  color: #06210f;
+  font-weight: 500;
+  border-color: transparent;
+}
+
+.btn-primary:hover {
+  background: var(--color-btn-hover);
+  color: #06210f;
+  box-shadow: var(--shadow-accent);
 }
 
 img {
@@ -113,7 +154,7 @@ img {
   object-fit: cover;
 }
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
   .container {
     width: var(--container-width-md);
   }
@@ -123,9 +164,13 @@ img {
   }
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
   .container {
     width: var(--container-width-sm);
+  }
+
+  h1 {
+    font-size: 2.2rem;
   }
 
   section > h2 {

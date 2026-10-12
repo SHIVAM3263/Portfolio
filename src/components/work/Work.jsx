@@ -10,12 +10,12 @@ const Work = () => {
       company: 'SAFE — IIT Bombay',
       duration: 'Feb 2024 – Present',
       highlights: [
-        'Built an automated answer-sheet grading module that extracts handwritten roll numbers from scanned exam PDFs using a TrOCR (PyTorch) pipeline with OpenCV preprocessing (deskew, contrast enhancement, upscaling), auto-crops per-question answer images, and exports a graded-submissions CSV — replacing the instructors\' manual sorting workflow.',
-        'Offloaded the ~1.3 GB OCR model and image-extraction work onto dedicated, isolated Celery queues separate from the web and proctoring workers, and built an async polling job system with deadline-based recovery for stuck jobs; diagnosed and fixed a native tokenizer segfault that was crashing the OCR worker.',
-        'Redesigned attendance proximity verification for iOS after MAC address deprecation by implementing a custom BLE scanning and advertising mechanism with device identity persistence using the iOS Keychain.',
-        'Implemented a submission recovery mechanism using browser local storage and backend reconciliation logic, allowing students to resume interrupted quizzes without data loss.',
-        'Built a scientific calculator and an instructor–student chat for the iOS examination app, supporting in-exam calculations and post-quiz query resolution.',
-        'Diagnosed and resolved production-breaking issues across quiz submission, webquiz and attendance flows by tracing execution across Django views, Celery workers and frontend state; stabilized asynchronous submission processing by fixing data-type inconsistencies and adding a locking mechanism to prevent concurrent Celery task execution.',
+        'Implemented student answer recovery for the web quiz used in high-stakes assessments such as IIT Bombay PhD and MS admission tests: browser local-storage snapshots restorable after a reload or browser crash, plus a password-gated restore from server-side snapshots for power loss or machine shutdown, so candidates keep their answers through a mid-exam failure on exams that cannot be re-run.',
+        'Built an offline answer-sheet digitization module that replaces instructors\' manual zip-and-CSV preparation: TrOCR (PyTorch) reads handwritten roll numbers after OpenCV preprocessing (deskew, contrast enhancement, upscaling), instructors correct low-confidence reads, and per-question answer crops load as gradable submissions.',
+        'Profiled the OCR pipeline\'s peak memory on the production software stack (kernel high-water mark), catching a 4.8 GB model-load spike that a steady-state estimate had missed, and built a concurrency sizing model holding the feature to ~5.1 GB worst case within the server\'s ~7.9 GB of free RAM, bounding a spike that could otherwise have exhausted memory on a server running live exams.',
+        'Isolated the ~1.3 GB TrOCR model and PDF rendering on dedicated Celery queues away from web and proctoring workers, added deadline-based recovery for crashed jobs, and fixed a native tokenizer segfault in the OCR worker.',
+        'Built iOS exam-app modules: BLE advertising/scanning for attendance proximity checks after MAC-based device identity stopped working on iOS, with identity persisted in Keychain, plus an in-exam calculator and instructor–student chat.',
+        'Resolved production issues across quiz submission, web quiz, and attendance by tracing Django views, Celery workers, and frontend state; added a Redis lock guarding the process-submissions action against repeated triggers.',
       ],
     },
   ];

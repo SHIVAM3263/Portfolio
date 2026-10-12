@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import './portfolio.css';
 import emosicImg from '../../assets/Emosic-Screenshot.jpg';
 import netflixImg from '../../assets/Netflix-screenshot.jpg';
+import code_clasherImg from '../../assets/code-clasher.jpg';
+import mockmateImg from '../../assets/mock-mate.jpg';
+import answersheet_graderImg from '../../assets/Answersheet-Grader.jpg'
 
 const Portfolio = () => {
   const soloProjects = [
@@ -9,7 +12,7 @@ const Portfolio = () => {
       id: 1,
       title: 'Code Clasher',
       category: 'Full Stack',
-      img: null,
+      img: code_clasherImg,
       description:
         'A real-time 1v1 competitive coding battle arena where two players race on the same problem with a live health/damage system. Built on Django Channels over WebSockets (Redis channel layer) to sync match state, health and results across clients, with JWT auth, Elo-based ranked matchmaking across skill tiers, and a sandboxed Python execution engine that runs submissions against test cases under per-problem time limits.',
       technologies: 'Django | Django Channels | Daphne/ASGI | Redis | React | Vite',
@@ -20,7 +23,7 @@ const Portfolio = () => {
       id: 2,
       title: 'MockMate',
       category: 'AI / ML',
-      img: null,
+      img: mockmateImg,
       description:
         'An AI voice interviewer that analyzes a resume, holds a real-time spoken interview and returns a scored feedback report. A Gemini-driven interviewer speaks each question (Deepgram Aura TTS) while the candidate answers by voice, with automatic turn-taking from in-browser silence detection. The interviewer is modeled as a stateful Gemini conversation over the full transcript, using structured outputs (validated Pydantic schemas) for resume parsing, question generation and the final report.',
       technologies: 'Next.js | Django REST | Gemini | Deepgram | PostgreSQL | Docker',
@@ -31,7 +34,7 @@ const Portfolio = () => {
       id: 3,
       title: 'Answersheet Grader',
       category: 'AI / ML',
-      img: null,
+      img: answersheet_graderImg,
       description:
         'An automated answer-sheet grading pipeline that extracts handwritten roll numbers from scanned exam PDFs using TrOCR with OpenCV preprocessing (deskew, contrast enhancement, upscaling), auto-crops per-question answer images, and exports a graded-submissions CSV — replacing the manual sorting workflow instructors used to run by hand.',
       technologies: 'Python | PyTorch | Hugging Face TrOCR | OpenCV | Celery',
